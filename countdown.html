@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <video id="bgvideo" autoplay="autoplay" loop="loop" style="visibility: hidden;">
+        <video id="bgvideo" autoplay="autoplay" muted="muted loop="loop" style="visibility: hidden;">
             <source type="video/mp4" src="Pexelsbg.mp4">   
         </video>
         <div id="main" class="container">
@@ -24,45 +24,45 @@
 
         <script>
             // set new year date and time
-            var countDate = new Date("Dec 30,2020 01:15:00").getTime();    
+            var countDate = new Date("Dec 30,2020 13:05:30").getTime();    
             function newYear(){
                 // get current time
                 var now = new Date().getTime();
-                var gap = countDate - now;
-                if(gap > 0){
-                    
-                // define values 
-                var sec = 1000;
-                var min = sec * 60;
-                var hr = min * 60;
-                var day = hr * 24;
+                var gap = ((countDate/1000) - (now/1000));
+                // alert(gap);       
+                    if(gap > 0){
+                        var sec = 1;
+                        var min = sec * 60;
+                        var hr = min * 60;
+                        var day = hr * 24;
 
                 // calculate day,hour,minute,second
-                var d = Math.floor(gap / (day));
-                var h = Math.floor((gap % (day)) / (hr));
-                var m = Math.floor((gap % (hr)) / (min));
-                var s = Math.floor((gap % (min)) / (sec));
+                        var d = Math.floor(gap / (day));
+                        var h = Math.floor((gap % (day)) / (hr));
+                        var m = Math.floor((gap % (hr)) / (min));
+                        var s = Math.floor((gap % (min)) / (sec));
 
                 // set text with calculated values
-                document.getElementById("day").innerHTML= d;
-                document.getElementById("hour").innerHTML= h;
-                document.getElementById("minute").innerHTML= m;
-                document.getElementById("second").innerHTML= s;
+                        document.getElementById("day").innerHTML= d;
+                        document.getElementById("hour").innerHTML= h;
+                        document.getElementById("minute").innerHTML= m;
+                        document.getElementById("second").innerHTML= s;
+
+                    }
+                                       
+                    else if (-60 < gap <= 0){
+                    document.getElementById("wishmsg").innerHTML="HAPPY NEW YEAR";
+                    document.getElementById("bgvideo").style.visibility="hidden";
+                    document.getElementById("main").style.opacity = "0.8";
+                    document.getElementById("main").style.boxShadow = "none";
+                    document.getElementById("day").style.display="none";
+                    document.getElementById("hour").style.display="none";
+                    document.getElementById("minute").style.display="none";
+                    document.getElementById("second").style.display="none";
+                    document.getElementById("main").style.borderRadius = "80px";
 
                 }
-//                 else if(gap < 0){
-//                     document.getElementById("wishmsg").innerHTML="HAPPY NEW YEAR";
-//                     document.getElementById("bgvideo").style.visibility="hidden";
-//                     document.getElementById("main").style.opacity = "0.8";
-//                     document.getElementById("main").style.boxShadow = "none";
-//                     document.getElementById("day").style.display="none";
-//                     document.getElementById("hour").style.display="none";
-//                     document.getElementById("minute").style.display="none";
-//                     document.getElementById("second").style.display="none";
-//                     document.getElementById("main").style.borderRadius = "80px";
-//                 }
-                else{
-                    
+                else {
                     document.getElementById("bgvideo").style.visibility="visible";
                     document.getElementById("wishmsg").innerHTML="HAPPY NEW YEAR";
                     document.getElementById("main").style.opacity = "0.3";
@@ -73,9 +73,9 @@
                     document.getElementById("second").style.display="none";
                     document.getElementById("main").style.borderRadius = "80px";
                     // document.body.style.background = "url('ny.jpeg')";
-                }
-                
+                    }
             }
+            
             setInterval(function(){
                     newYear();
                 },1000)
