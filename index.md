@@ -1,37 +1,87 @@
-## Welcome to GitHub Pages
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=""UTF-8>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Countdown 2021</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body onload="newYear()">
+        
+        <video id="bgvideo" autoplay="autoplay" muted="muted loop="loop" style="visibility: hidden;">
+            <source type="video/mp4" src="Pexelsbg.mp4">   
+        </video>
+        <div id="main" class="container">
+        <h2><span id="wishmsg">Countdown to New Year</span>2021</h2>
+            <div class="countdown">
+                <div id="day"></div>
+                <div id="hour"></div>
+                <div id="minute"></div>
+                <div id="second"></div>
+            </div>
+        </div>
 
-You can use the [editor on GitHub](https://github.com/LovinChristy/Wishtimer/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+        <!-- Script for count down till New Year -->
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+        <script>
+            // set new year date and time
+            var countDate = new Date("Jan 1,2021 00:00:00").getTime();    
+            function newYear(){
+                // get current time
+                var now = new Date().getTime();
+                var gap = ((countDate/1000) - (now/1000));
+                // alert(gap);       
+                    if(gap > 0){
+                        var sec = 1;
+                        var min = sec * 60;
+                        var hr = min * 60;
+                        var day = hr * 24;
 
-### Markdown
+                // calculate day,hour,minute,second
+                        var d = Math.floor(gap / (day));
+                        var h = Math.floor((gap % (day)) / (hr));
+                        var m = Math.floor((gap % (hr)) / (min));
+                        var s = Math.floor((gap % (min)) / (sec));
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+                // set text with calculated values
+                        document.getElementById("day").innerHTML= d;
+                        document.getElementById("hour").innerHTML= h;
+                        document.getElementById("minute").innerHTML= m;
+                        document.getElementById("second").innerHTML= s;
 
-```markdown
-Syntax highlighted code block
+                    }
+                                       
+                    else if (-60 < gap <= 0){
+                    document.getElementById("wishmsg").innerHTML="HAPPY NEW YEAR";
+                    document.getElementById("bgvideo").style.visibility="hidden";
+                    document.getElementById("main").style.opacity = "0.8";
+                    document.getElementById("main").style.boxShadow = "none";
+                    document.getElementById("day").style.display="none";
+                    document.getElementById("hour").style.display="none";
+                    document.getElementById("minute").style.display="none";
+                    document.getElementById("second").style.display="none";
+                    document.getElementById("main").style.borderRadius = "80px";
 
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/LovinChristy/Wishtimer/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+                }
+                else {
+                    document.getElementById("bgvideo").style.visibility="visible";
+                    document.getElementById("wishmsg").innerHTML="HAPPY NEW YEAR";
+                    document.getElementById("main").style.opacity = "0.3";
+                    document.getElementById("main").style.boxShadow = "none";
+                    document.getElementById("day").style.display="none";
+                    document.getElementById("hour").style.display="none";
+                    document.getElementById("minute").style.display="none";
+                    document.getElementById("second").style.display="none";
+                    document.getElementById("main").style.borderRadius = "80px";
+                    // document.body.style.background = "url('ny.jpeg')";
+                    }
+            }
+            
+            setInterval(function(){
+                    newYear();
+                },1000)
+            
+            
+        </script>
+    </body>
+</html>
