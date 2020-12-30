@@ -127,27 +127,27 @@ video {
     } 
  } 
  /* MEDIUM mobile */
- @media only screen and (min-width:375px) {
-     body{
-       background-size: cover;    
-    }
+ @media only screen and (min-width: 351px) and (max-width:420px) {
+    body{
+        background-size: cover;    
+     }
     .countdown div{
         width: 70px;
-        margin-left: -10px;
+        margin:0 2px;
     }
     .container{
         box-shadow: none;
         width: min-content;
-        margin-left: -50px;
+        margin-left:-50px;
     } 
     #wishmsg{
         margin-top: 80px; 
     } 
 }
-@media only screen and (min-width: 425px) and (max-width: 600px) {
+@media only screen and (min-width: 421px) and (max-width: 600px) {
     body{
-       background-size: cover;    
-    }
+        background-size: cover;    
+     }
     .countdown div{
         width: 70px;
         margin-left: 0px;
@@ -166,8 +166,8 @@ video {
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) and (max-width:1100px) {
     body{
-       background-size: cover;    
-    }
+        background-size: cover;    
+     }
     .container{
         box-shadow: 0 20px 0 20px rgba(180, 177, 177, 0.5),0 0 0 100px rgba(0, 0, 0,0.1);
         width: 80%;
