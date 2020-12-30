@@ -7,8 +7,8 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <video id="bgvideo" playsinline autoplay loop " style="visibility: hidden;>
-            <source type="video/mp4" src="bgvideo2.mp4">   
+        <video id="bgvideo" autoplay="autoplay" loop="loop" style="visibility: hidden;">
+            <source type="video/mp4" src="bgvideo1.mp4">   
         </video>
         <div id="main" class="container">
         <h2><span id="wishmsg">Countdown to New Year</span>2021</h2>
@@ -24,7 +24,7 @@
 
         <script>
             // set new year date and time
-            var countDate = new Date("Dec 29,2020 19:15:00").getTime();    
+            var countDate = new Date("Dec 29,2020 22:30:00").getTime();    
             function newYear(){
                 // get current time
                 var now = new Date().getTime();
@@ -51,17 +51,17 @@
 
                 }
                 else{
-                document.getElementById("bgvideo").style.visibility="visible";
-                document.getElementById("wishmsg").innerHTML="HAPPY NEW YEAR";
-                var a = document.getElementById("day");
-                a.style.display= "none";
-                var b = document.getElementById("hour");
-                b.style.display= "none";
-                var c = document.getElementById("minute");
-                c.style.display= "none";
-                var d = document.getElementById("second");
-                d.style.display= "none";
-                document.body.style.background = "url('ny.jpeg')";
+                    
+                    document.getElementById("bgvideo").style.visibility="visible";
+                    document.getElementById("wishmsg").innerHTML="HAPPY NEW YEAR";
+                    document.getElementById("main").style.opacity = "0.3";
+                    document.getElementById("main").style.boxShadow = "none";
+                    document.getElementById("day").style.display="none";
+                    document.getElementById("hour").style.display="none";
+                    document.getElementById("minute").style.display="none";
+                    document.getElementById("second").style.display="none";
+                    document.getElementById("main").style.borderRadius = "80px";
+                    // document.body.style.background = "url('ny.jpeg')";
                 }
             }
             setInterval(function(){
