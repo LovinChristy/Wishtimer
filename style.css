@@ -127,7 +127,7 @@ video {
     } 
  } 
  /* MEDIUM mobile */
- @media only screen and (min-width: 350px) and (max-width:375px) {
+ @media only screen and (min-width:375px) {
      body{
        background-size: cover;    
     }
