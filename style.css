@@ -110,7 +110,7 @@ video {
     }
     .container{
 /*         box-shadow: none; */
-        opacity: 0.3;
+        opacity: 0.6;
         width: min-content;
     }
     #wishmsg{
