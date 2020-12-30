@@ -105,12 +105,12 @@ video {
 @media only screen and (max-width: 600px) {
     .countdown div{
         width: 50px;
-        margin: auto;
+        /* margin: auto; */
         /* margin:0 7px 0 7px; */
     }
     .container{
-/*         box-shadow: none; */
-        opacity: 0.6;
+        box-shadow: none;
+        /* opacity: 0.3; */
         width: min-content;
     }
     #wishmsg{
