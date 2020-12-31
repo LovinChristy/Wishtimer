@@ -8,7 +8,7 @@
     scroll-behavior: smooth;
 }
 body{
-    background:#000 url("bg_img.jpg");
+    background:rgb(0, 0, 0,0.1) url("bg_img.jpg");
     height: auto;
     min-height: 100vh;
     justify-content: center;
