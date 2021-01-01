@@ -52,7 +52,19 @@
                     }
                                        
                     else if (-60 < gap <= 0){
-                         document.getElementById("bgvideo").style.visibility="visible";
+                        document.getElementById("wishmsg").innerHTML="HAPPY NEW YEAR";
+                    document.getElementById("bgvideo").style.visibility="hidden";
+                    document.getElementById("main").style.opacity = "0.8";
+                    document.getElementById("main").style.boxShadow = "none";
+                    document.getElementById("day").style.display="none";
+                    document.getElementById("hour").style.display="none";
+                    document.getElementById("minute").style.display="none";
+                    document.getElementById("second").style.display="none";
+                    document.getElementById("main").style.borderRadius = "80px";                       
+                   
+                }
+                else {
+                    document.getElementById("bgvideo").style.visibility="visible";
                     document.getElementById("wishmsg").innerHTML="HAPPY NEW YEAR";
                     document.getElementById("main").style.opacity = "0.3";
                     document.getElementById("main").style.boxShadow = "none";
@@ -62,19 +74,6 @@
                     document.getElementById("second").style.display="none";
                     document.getElementById("main").style.borderRadius = "80px";
                     // document.body.style.background = "url('ny.jpeg')";
-                   
-                }
-                else {
-                    document.getElementById("wishmsg").innerHTML="HAPPY NEW YEAR";
-                    document.getElementById("bgvideo").style.visibility="hidden";
-                    document.getElementById("main").style.opacity = "0.8";
-                    document.getElementById("main").style.boxShadow = "none";
-                    document.getElementById("day").style.display="none";
-                    document.getElementById("hour").style.display="none";
-                    document.getElementById("minute").style.display="none";
-                    document.getElementById("second").style.display="none";
-                    document.getElementById("main").style.borderRadius = "80px";
-                    document.body.style.background = "url('ny.jpeg')";
 
                     }
             }
